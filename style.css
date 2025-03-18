@@ -1,0 +1,250 @@
+ * {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    background-image: url(background.png);
+    background-size: cover;
+    /* Ensures the background image covers the entire area, maintaining its aspect ratio.
+ */
+    background-position: center;
+    /* Centers the background image within the element. */
+    position: relative;
+    overflow: hidden;
+}
+
+.logo {
+    width: 100px;
+    cursor: pointer;
+
+}
+
+.navbar {
+    width: 85%;
+    height: 15%;
+    /*  Sets the navbar width to 85% of its parent(hero-section) and height to 15% of the hero section. */
+    display: flex;
+    margin: auto;
+    /* margin: auto;: Centers the navbar horizontally within its parent. */
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    color: #fbfcfd;
+    padding: 10px 25px;
+    /* Adds padding inside the button for spacing. */
+    background: transparent;
+    border: 1px solid #fff;
+    cursor: pointer;
+    border-radius: 20px;
+    outline: none;
+}
+
+.content {
+    color: #fbfcfd;
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50);
+    /* : Corrects the vertical positioning by moving the element up by 50% of its height, centering it exactly.
+  */
+    z-index: 2;
+    /* z-index: 2;: Ensures the content appears above other elements with a lower z-index. */
+
+}
+
+h1 {
+    font-size: 80px;
+    margin: 10px 0 30px;
+    line-height: 80px;
+}
+
+.slide-bar {
+    width: 50px;
+    height: 100vh;
+    background: linear-gradient(#00545d, #000729);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.menu {
+    display: block;
+    width: 25px;
+    margin: 40px auto 0;
+    cursor: pointer;
+}
+
+.social-links img,
+.useful-links img {
+    width: 25px;
+    margin: 5px auto;
+    cursor: pointer;
+}
+
+.social-links {
+    width: 50px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.useful-links {
+    width: 50px;
+    text-align: center;
+    position: absolute;
+    bottom: 30px;
+}
+
+.bubbles img {
+    width: 50px;
+    animation: bubble 7s linear infinite;
+    /* It runs in a linear fashion (constant speed). */
+}
+
+.bubbles {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    bottom: -70px;
+    position: absolute;
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+         /* Definition: When you set an element's opacity to 0, it means the element will be completely invisible but still present in the layout. 
+         not be visible */
+    }
+
+    50% {
+
+        opacity: 1;
+        /* completely visible */
+
+    }
+
+    70% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+        transform: translateY(-80vh);
+        opacity: 0;
+
+    }
+    /* Animation Breakdown:
+    0% { transform: translateY(0); opacity: 0; }
+
+    At the start (0%), the bubbles are at their original position (no vertical movement) and completely transparent (opacity: 0).
+    50% { opacity: 1; }
+
+    At the halfway point (50%), the bubbles become fully opaque (opacity: 1).
+    70% { opacity: 1; }
+    The bubbles stay fully visible.
+
+    100% { transform: translateY(-80vh); opacity: 0; }
+    At the end (100%), the bubbles move upwards by 80% of the viewport height (translateY(-80vh)) and become fully transparent (opacity: 0). */
+}
+
+.bubbles img:nth-child(1) {
+
+    animation-delay: 2s;
+    width: 25px;
+}
+
+.bubbles img:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.bubbles img:nth-child(3) {
+    animation-delay: 3s;
+    width: 25px;
+}
+
+.bubbles img:nth-child(4.5) {
+    animation-delay: 4.5s;
+}
+
+.bubbles img:nth-child(5) {
+    animation-delay: 3s;
+}
+
+.bubbles img:nth-child(6) {
+    animation-delay: 6s;
+    width: 20px;
+}
+
+.bubbles img:nth-child(7) {
+    animation-delay: 7s;
+    width: 35px;
+}
+
+
+/* MEDIA QUERIES/ */
+@media screen and (max-width: 600px) {
+
+    h1 {
+        font-size: 36px;
+        line-height: 50px;
+    }
+
+    .slide-bar {
+        width: 100%;
+        height: 50px;
+        top: auto;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .social-links {
+        width: auto;
+        position: unset;
+        /* phle humne position-absolute use ke h but less then 600 screen size we set default property 
+        Revert to Default: If you've set a specific positioning (like relative, absolute, etc.) earlier in your CSS and want to reset it to the default behavior without manually changing it to static, you can use position: unset.*/
+        transform: none;
+    }
+
+    .useful-links {
+        width: auto;
+        position: unset;
+    }
+    .menu {
+        width: 18px;
+        margin:0;
+    }
+    .hero{
+        background-image: url(background.png);
+    }
+
+}
+
+@media screen and (max-width: 900px) and (min-width: 600px) {
+
+/* @media screen and (max-width: 600px)
+
+Adjusts styles for smaller screens (e.g., mobile devices):
+Reduces the font size of <h1>.
+Adjusts the slide bar to fit smaller screens.
+Modifies the position of social and useful links.
+Updates the .hero background to fit smaller viewports.
+@media screen and (max-width: 900px) and (min-width: 600px)
+
+A placeholder for adjusting styles for devices with screen widths between 600px and 900px. */
+
+}  
